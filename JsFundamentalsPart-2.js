@@ -216,7 +216,8 @@ console.log(jonas['last' + nameKey]);
 // console.log(jonas.'last' + nameKey) // unexpected string.
 
 const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
-
+// when we use bracket notation it will first gets the value in the interestedIn and gets the value in jonas.
+// if we use the dot notation it will display as undefinied.
 if (jonas[interestedIn]) {
   console.log(jonas[interestedIn]);
 } else {
