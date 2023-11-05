@@ -1,5 +1,5 @@
 // Strict note is used to write secured js.
-// It creates the visible errors 
+// It creates the visible errors
 /*
 'use strict';
 let name = fale;
@@ -104,6 +104,18 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 // return statement must be the last statement in the function, after return statement function will get exited immediately.
 console.log(yearsUntilRetirement(2003, 'sai'));
 console.log(yearsUntilRetirement(1955, 'teja'));
+
+// recursion function
+// a function calls itself.
+function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+console.log(pow(2, 3));
 
 // Introduction to Arrays
 const friend1 = 'sai';
@@ -270,6 +282,71 @@ console.log(gowtham.calcAge());
 console.log(gowtham.age);
 console.log(gowtham.getSummary);
 
+// prototypes: 
+// javaScript is an prototype-based OOP language. In prototype-based languages, objects inherit data from objects.
+// Object.getPrototypeOf() - Accessing the shared Prototype of an Instance
+let myArray = new Array("a", 2, true);
+console.log(Object.getPrototypeOf(myArray));
+
+// Adding a Method to the prototype
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Person.prototype.displayFullName = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+let person1 = new Person("Virat", "Kohli");
+console.log(person1.displayFullName());
+// prototypal Inheritance
+// On calling the new() operator, all the properties and methods defined on the prototype will become accessible to the instance objects. This process is called Prototypal Inheritance.
+
+let myArray = new Array("a", 2, true);
+console.log(Object.getPrototypeOf(myArray));
+
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// we can find both properties in rabbit now:
+console.log(rabbit.eats);
+console.log(rabbit.jumps);
+
+// classes
+// The class is a special type of function used for creating multiple objects
+
+class Animal {
+    constructor(name) {
+    this.name = name;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+  sniff() {
+    return this;
+  }
+}
+let dog = new Dog("dog", "german Shepherd");
+
+console.log(dog.sniff());
+// here this refers to Instance of object i.e, dog
+// The extends keyword is used to inherit the methods and properties of the superclass.
+// Calling super() makes sure that SuperClass constructor() gets called and initializes the instance.
+// this in object methods refers to current object
+// this in regular function refers to the window object.
+// In Arrow functions, this depends on two aspects: 1. In object methods - window and In arrow functions with callbacks refers to current object.
+
 // Iteration: The for Loop
 
 // for loop keeps running while condition is TRUE
@@ -377,4 +454,3 @@ while (dice !== 6) {
 }
 
 */
-

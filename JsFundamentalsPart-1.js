@@ -310,4 +310,12 @@ console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
 
+// Exception handling
+try {
+  doSomething();
+} catch (e) {
+  Rollbar.error("Something went wrong", e);
+}
+// here e is an object of catch block, which returns the error.
+
 */
