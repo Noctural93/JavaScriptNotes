@@ -197,6 +197,8 @@ const jonas = {
 };
 
 // Dot vs. Bracket Notation
+// . - member access
+// [] - computed member access
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
@@ -230,17 +232,23 @@ console.log(jonas);
 
 // Object Methods
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  birthYeah: 1991,
+const gowtham = {
+  firstName: 'Gowtham',
+  lastName: 'varma',
+  birthYeah: 2003,
   job: 'teacher',
   friends: ['Michael', 'Peter', 'Steven'],
   hasDriversLicense: true,
 
-  // calcAge: function (birthYear) {
+  // calcAge: function (birthYear) { // it is a property of this object so we will use ':'.
   //   return 2023 - birthYear;
   // }
+
+  // console.log(gowtham.calcAge(2003)); // both will give the same output.
+  // console.log(gowtham['calcAge'](2003));
+  // if we pass the diff argument in the above expression then we will get an error, so to get the value from the object we will use this keyword.
+  // this keyword always returns the current object on which it is called.
+  // If we change the object name also this will represents the current object only so, instead of using gowtham.birthYear we can use this.birthYear.
 
   // calcAge: function () {
   //   // console.log(this);
@@ -257,11 +265,10 @@ const jonas = {
   }
 };
 
-console.log(jonas.calcAge());
+console.log(gowtham.calcAge());
 
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
+console.log(gowtham.age);
+console.log(gowtham.getSummary);
 
 // Iteration: The for Loop
 
@@ -269,6 +276,7 @@ console.log(jonas.age);
 for (let rep = 1; rep <= 30; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 }
+// emojis shortcut - windows + '.'.
 
 // Looping Arrays, Breaking and Continuing
 const jonas = [
@@ -317,7 +325,7 @@ for (let i = 0; i < jonas.length; i++) {
 console.log('--- BREAK WITH NUMBER ---')
 for (let i = 0; i < jonas.length; i++) {
   if (typeof jonas[i] === 'number') break;
-
+  // loop will get terminated immediately, it will not continue any more.
   console.log(jonas[i], typeof jonas[i]);
 }
 
@@ -347,6 +355,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
 }
 
 // The while Loop
+// It is more versatile than the for loop, it can be used in larger variety of situations, because it doen't require the counter, all it needs is a condition.
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 }
@@ -357,12 +366,14 @@ while (rep <= 10) {
   rep++;
 }
 
-let dice = Math.trunc(Math.random() * 6) + 1;
-
+const randomValue = function(){
+  let dice = Math.trunc(Math.random() * 6) + 1;
+  return dice;
+}
 while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) console.log('Loop is about to end...');
+  randomValue();
+  if (randomValue.dice === 6) console.log('Loop is about to end...');
 }
 
 */
