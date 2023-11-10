@@ -163,6 +163,8 @@ console.log(`I am ` + 20 + ` years old`); // when ever there's is a number betwe
 console.log(`21` - 4 - `5`); // When we use the -, *, / operator's it will convert the string into num.
 console.log(`3` * `4`);
 console.log(`3` / `2`);
+// to convert a string type num into num type
+console.log(+'1' + +'2');
 
 let n = `1` + 1;
 n = n - 1;
